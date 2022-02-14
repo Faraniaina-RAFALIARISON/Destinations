@@ -1,38 +1,206 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+*{
+  box-sizing: border-box;
   }
+
+body{
+  background-color: rgb(253, 246, 246);
+
+}
+.App{
+  margin: 0 auto;
+  max-width: 1300px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Destinations{
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  list-style: none;
+  grid-gap: 20px;
+}
+.menu.li{
+  border: 1px solid rgb(238, 234, 234);
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.Modal {
+  background-color: rgb(4, 230, 4);
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  margin: 0 auto;
+ 
+}
+button.Modal{
+  border: none;
+}
+
+.ligne-droite {
+  width : 100%;
+  height: 1px;
+  color: rgb(238, 234, 234);
+  padding-bottom:1em ;
+}
+.image {
+  width: 100%;
+  height: 47%;
+}
+.lieu {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+
+}
+.capital {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.case {
+  border: 2px solid rgb(238, 234, 234);
+
+}
+
+.listing{
+  list-style: none;
+  font-size: 11px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+}
+
+.listing li {
+  border: 1px solid rgb(238, 234, 234);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex; 
+  justify-content: space-around;
+  padding: 5px;
+  font-weight:bold;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 15px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 25px;
+  width: 25px;
+  left: -4px;
+  bottom: -5px;
+  background-color: rgb(240, 236, 236);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(4, 230, 4);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(4, 230, 4);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(30px);
+  background-color: rgb(4, 230, 4);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 30px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.formulaire {
+  width: 500px;
+  height: 400px;
+  border: 2px solid rgb(240, 236, 236);
+  background-color: white;
+  margin: 0 auto;
+  padding: 1em;
+  margin-top: 15em;
+  border-radius: 5px;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(240, 236, 236);
+  margin-bottom: 1.5em;
+  border:none;
+  border-radius: 3px;
+}
+
+.titre {
+  font-size: 15px;
+  margin-bottom: 1.5em;
+}
+.informations {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  column-gap: 1em;
+}
+.activate {
+  display: flex;
+  column-gap: 1em;
+  margin-bottom: 3em;
+}
+.confirmation {
+  display: flex;
+  float: right;
+}
+
+.confirmation button {
+  border: none;
+  background-color: white ;
+}
+.confirm {
+  color:rgb(4, 230, 4);
+}
+#myForm {
+  font-size: 11px;
+}
+#ajouter {
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
