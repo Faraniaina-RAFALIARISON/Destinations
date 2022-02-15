@@ -1,9 +1,9 @@
 import React from 'react';
+import { Component } from 'react/cjs/react.production.min';
 
-class Modal extends React.Component {
+const ModalContent = () => {
 
-
-    render(){
+       
     return (
         <div className='Modal'>
             <div className='formulaire'>
@@ -59,6 +59,4 @@ class Modal extends React.Component {
                 
     );
 }
-}
-
-export default Modal;
+export default ModalContent;

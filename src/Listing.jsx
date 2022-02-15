@@ -1,33 +1,57 @@
-import React  from 'react';
-import Modal from './Modal';
+import React, {useState}  from 'react';
+import ModalContent from './ModalContent';
 import './App.css';
+import { Component } from 'react/cjs/react.production.min';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
-class Listing extends React.Component {
- state = {
-     visible: false
- }
- montre = () => {
-     this.setState({visible: true})
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '700px',
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+};
 
- }
- cache = () => {
-     this.setState({visible: false})
- }
-    render(){
+function Listing () {
+    const [openModal, setOpenModal] = useState(false);
+
+    const  handleAdd = () => {
+        setOpenModal(true);
+    }
+
+    const handleClose = () => {
+        setOpenModal(false);
+    }
     return (
-        <div className='Listing'>
+        <div>
+             <Modal
+                open={openModal}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+                >
+                <Box sx={style}>
+                    <ModalContent/>
+                </Box>
+            </Modal>
+        <div className='Listing' >
+
                 <ul className='menu'>
                     <li>
                         <h1 className='Destinations'>Destinations</h1>
                     </li>
                     <li>
-                        <button onClick={this.montre} className='Modal' id='ajouter'>
+                        <button  className='addModal' id='ajouter' onClick={() => handleAdd()}>
                             <b>+  AJOUTER</b> 
                         </button>
-                        <Modal 
-                        visible={this.state.visible}
-                        cache={this.cache}
-                        />
+
                     </li>
                 </ul>
 
@@ -170,7 +194,7 @@ class Listing extends React.Component {
                         <div className='lieu'>
                             <div>
                                 <div className='capital'>Tokyo</div>
-                                <div>4 Chome-2-8 Shibakoen, Minato City, Tokyo 105-0011, Japan</div>
+                                <div>4 Chome-2-8 Shibakoen, Minato City, Tokyo 105-0011</div>
                             </div>
                         <div>
                                 <label class="switch">
@@ -231,8 +255,9 @@ class Listing extends React.Component {
                 </li>
             </ul>
         </div>
+    </div>
     
     );
 }
-}
+
 export default Listing;

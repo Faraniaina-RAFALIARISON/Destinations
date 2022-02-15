@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Modal from './Modal';
+import Modal from './ModalContent';
 import Listing from './Listing';
 
 function App() {
