@@ -1,14 +1,17 @@
 import React from 'react';
 import './App.css';
-import Modal from './ModalContent';
+import ModalContent from './ModalContent';
 import Listing from './Listing';
+import DestinationContextProvider from './Context/DestinationContext';
 
 function App() {
-  
   return (
-    <div className="App">
-      <Listing/>
+    <div className='App'>
+       <DestinationContextProvider>
+        <Listing/>
+      </DestinationContextProvider>
     </div>
+     
   );
 }
 
